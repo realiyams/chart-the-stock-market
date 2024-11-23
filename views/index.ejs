@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart the Stock Market</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Stock Market Chart</h1>
+    <form id="stock-form">
+      <label for="symbol">Stock Symbol:</label>
+      <input type="text" id="symbol" name="symbol" required placeholder="AAPL">
+
+      <button type="submit">Get Data</button>
+    </form>
+
+    <canvas id="stockChart" width="800" height="400"></canvas>
+
+    <div id="dataset-list" class="dataset-list">
+      <!-- Daftar dataset akan ditambahkan di sini -->
+    </div>
+
+    <!-- Card untuk contoh stock symbols -->
+    <div id="example-stocks-card" class="example-stocks-card">
+      <h3>Example Stock Symbols</h3>
+      <p>If you're not sure which stock to search for, you can try one of these:</p>
+      <div class="example-stocks-list">
+        <ul>
+          <li>AAPL - Apple Inc. (USA)</li>
+          <li>TSLA - Tesla Inc. (USA)</li>
+          <li>GOOGL - Alphabet Inc. (Google) (USA)</li>
+          <li>AMZN - Amazon.com Inc. (USA)</li>
+          <li>MSFT - Microsoft Corporation (USA)</li>
+          <li>FB - Meta Platforms, Inc. (Facebook) (USA)</li>
+          <li>NFLX - Netflix, Inc. (USA)</li>
+          <li>NVDA - NVIDIA Corporation (USA)</li>
+          <li>DIS - The Walt Disney Company (USA)</li>
+          <li>IBM - International Business Machines Corporation (USA)</li>
+          <li>SPY - SPDR S&P 500 ETF Trust (USA)</li>
+          <li>BA - The Boeing Company (USA)</li>
+          <li>GM - General Motors Company (USA)</li>
+          <li>PEP - PepsiCo, Inc. (USA)</li>
+          <li>KO - The Coca-Cola Company (USA)</li>
+          <li>INTC - Intel Corporation (USA)</li>
+          <li>VZ - Verizon Communications (USA)</li>
+          <li>PFE - Pfizer Inc. (USA)</li>
+          <li>WMT - Walmart Inc. (USA)</li>
+          <li>JPM - JPMorgan Chase & Co. (USA)</li>
+          <li>BMW - Bayerische Motoren Werke AG (Germany)</li>
+          <li>TSCO - Tesco PLC (UK)</li>
+          <li>RDSA - Royal Dutch Shell plc (UK/Netherlands)</li>
+          <li>BP - BP plc (UK)</li>
+          <li>GSK - GlaxoSmithKline plc (UK)</li>
+          <li>VOD - Vodafone Group Plc (UK)</li>
+          <li>SAP - SAP SE (Germany)</li>
+          <li>LVMH - LVMH Moët Hennessy Louis Vuitton (France)</li>
+          <li>ASML - ASML Holding (Netherlands)</li>
+          <li>VWAGY - Volkswagen AG (Germany)</li>
+          <li>ALV - Allianz SE (Germany)</li>
+          <li>RIO - Rio Tinto Group (UK/Australia)</li>
+          <li>7203.T - Toyota Motor Corporation (Japan)</li>
+          <li>6758.T - Sony Group Corporation (Japan)</li>
+          <li>9984.T - SoftBank Group Corp. (Japan)</li>
+          <li>2318.HK - Ping An Insurance (China)</li>
+          <li>0700.HK - Tencent Holdings Limited (China)</li>
+          <li>BABA - Alibaba Group (China)</li>
+          <li>AIA - AIA Group Limited (Hong Kong)</li>
+          <li>TCS - Tata Consultancy Services (India)</li>
+          <li>INFY - Infosys Limited (India)</li>
+          <li>RELIANCE - Reliance Industries Limited (India)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/chart.js"></script>
+  <script src="/js/socketIO.js"></script>
+</body>
+
+</html>
